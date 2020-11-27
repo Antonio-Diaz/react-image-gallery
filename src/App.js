@@ -9,8 +9,10 @@ function App() {
   const [isLoading,setIsLoading] = useState(true);
   const [term, setTerm] = useState('');
 
+  const pixelbay_api_key = `19162501-48cdbd3f5fa909086a33118a6`;
+
   useEffect(() => {
-    fetch(`https://pixabay.com/api/?key=${ process.env.REACT_APP_PIXABAY_API_KEY }&q=${ term }&image_type=photo`)
+    fetch(`https://pixabay.com/api/?key=${ pixelbay_api_key }&q=${ term }&image_type=photo`)
     .then(res => res.json())
     .then(data => {
       setImages(data.hits);
